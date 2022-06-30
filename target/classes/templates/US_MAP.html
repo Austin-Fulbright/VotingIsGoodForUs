@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
-    <title>Getting Started: Serving Web Content</title> 
+
+<head>
+    <title>United States Election Map</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
@@ -13,34 +14,60 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Lato", sans-serif
+    }
+
+    .bar,
+    h1,
+    button {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor,
+    .fa-coffee {
+        font-size: 200px
+    }
 </style>
 </head>
+
 <body>
 
 
-<!-- Second Grid -->
-<div class=" row-padding  light-grey  padding-64  container">
-  <div class=" content">
-    <div class=" third  center">
+    <!-- Second Grid -->
+    <div class=" row-padding  light-grey  padding-small  container navigator">
+        <div class=" content">
+            <img src="./assets/home_icon.png" class = "padding-small">
+        </div>
     </div>
 
-    <div class=" twothird">
-
+    <div class=" container  white  center  opacity  padding-64">
+        <iframe src="https://createaclickablemap.com/map.php?id=111405&maplocation=us2&online=true" width="900"
+            height="525" style="border: none;"></iframe>
     </div>
-  </div>
-</div>
+    <script>
+        if (window.addEventListener) {
+            window.addEventListener("message", function (event) {
+                if (event.data.length >= 22) {
+                    if (event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22);
+                }
+            }, false);
+        }
+        else if (window.attachEvent) { window.attachEvent("message", function (event) { if (event.data.length >= 22) { if (event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); }
 
-<div class=" container  white  center  opacity  padding-64">
-</div>
-
-<!-- Footer -->
-<footer class=" container  white padding-64  center  opacity">  
-  <div class=" xlarge  padding-32">
-    <p th:text="'Hello, ' + ${name} + '!'" >
-</footer>
+    </script>
+    <!-- Footer -->
+    <footer class=" container  white padding-64  center  opacity">
+        <div class=" xlarge  padding-32">
+            <p th:text="'Hello, ' + ${name} + '!'">
+    </footer>
 
 </body>
+
 </html>
