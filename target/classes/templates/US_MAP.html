@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+
+<!-- Second Grid -->
+<div class=" row-padding  light-grey  padding-64  container">
+  <div class=" content">
+    <div class=" third  center">
+    </div>
+
+    <div class=" twothird">
+
+    </div>
+  </div>
+</div>
+
+<div class=" container  white  center  opacity  padding-64">
+</div>
+
+<!-- Footer -->
+<footer class=" container  white padding-64  center  opacity">  
+  <div class=" xlarge  padding-32">
+    <p th:text="'Hello, ' + ${name} + '!'" >
+</footer>
+
+</body>
+</html>
